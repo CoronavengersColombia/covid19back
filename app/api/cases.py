@@ -7,7 +7,7 @@ from app.models import Day
 
 class DaySchema(ma.Schema):
     class Meta:
-        fields = ('did', 'date', 'total')
+        fields = ('did', 'date', 'count')
 
 # Model Schemas
 day_schema = DaySchema()
@@ -17,6 +17,8 @@ all_days_schema = DaySchema(many=True)
 @bp.route('/cases/', methods=['GET'])
 def cases():
     cases = Day.query.all()
+
+    data = []
 
     return all_days_schema.jsonify(cases)
 

@@ -5,7 +5,7 @@ from app import db
 class Day(db.Model):
     did = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime, index=True)
-    total = db.Column(db.Integer, default=0)
+    count = db.Column(db.Integer, default=0)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):

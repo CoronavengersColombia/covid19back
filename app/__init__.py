@@ -13,6 +13,9 @@ app.config['host'] = '0.0.0.0'
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+# Logging
+LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+
 # SQLAlchemy
 app.config['SECRET_KEY'] = os.environ.get('secret_key') or 'secret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI') or 'sqlite:///{}'.format(os.path.join(basedir, 'app.db'))
