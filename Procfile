@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn covid19back:app
+web: flask db upgrade; gunicorn covid19back:app --log-file -
