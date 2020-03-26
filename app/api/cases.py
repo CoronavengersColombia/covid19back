@@ -25,17 +25,17 @@ def cases():
 @bp.route('/cases/add/', methods=['POST'])
 def add_cases():
     date = datetime.strptime(request.json['date'], '%Y/%m/%d')
-    total = request.json['total']
+    count = request.json['count']
     
     day = Day.query.filter_by(date=date).first()
 
     if day is not None:
         day.date = date
-        day.total = total
+        day.count = count
         db.session.commit()
         return day_schema.jsonify(day)
 
-    day_cases = Day(date=date, total=total)
+    day_cases = Day(date=date, count=count)
     
     db.session.add(day_cases)
     db.session.commit()
