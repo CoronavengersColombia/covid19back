@@ -5,7 +5,7 @@ from app.api import bp
 from app.models import Store
 
 
-class DaySchema(ma.Schema):
+class StoreSquema(ma.Schema):
     class Meta:
         fields = (
             'sid',
@@ -23,13 +23,13 @@ class DaySchema(ma.Schema):
         )
 
 # Model Schemas
-store_schema = DaySchema()
-all_stores_schema = DaySchema(many=True)
+store_schema = StoreSquema()
+all_stores_schema = StoreSquema(many=True)
 
 
 @bp.route('/stores/', methods=['GET'])
 def stores():
-    cases = Day.query.all()
+    cases = Store.query.all()
 
     data = []
 
