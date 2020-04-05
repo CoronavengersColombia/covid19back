@@ -17,10 +17,10 @@ class Day(db.Model):
 class Store(db.Model):
     sid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(140), index=True, unique=True)
-    description = db.Column(db.String(140), index=True, unique=True)
+    description = db.Column(db.String(140), index=True)
     store_type = db.Column(db.String(140), index=True)
-    store_type_description = db.Column(db.String(140), index=True)
-    contact = db.Column(db.String(140), index=True)
+    store_type_description = db.Column(db.String(140))
+    contact = db.Column(db.String(140), index=True, unique=True)
     payment = db.Column(db.String(140), index=True)
     city = db.Column(db.String(140), index=True)
     sector = db.Column(db.String(140), index=True)
