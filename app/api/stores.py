@@ -46,7 +46,6 @@ def add_stores():
     city = request.json['city']
     sector = request.json['sector']
     coverage = request.json['coverage']
-    hours = request.json['hours']
     timestamp = datetime.strptime(request.json['timestamp'], '%Y/%m/%d')
     
     store = Store(
@@ -59,7 +58,6 @@ def add_stores():
         city=city,
         sector=sector,
         coverage=coverage,
-        hours=hours,
         timestamp=timestamp
     )
     
