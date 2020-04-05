@@ -14,7 +14,6 @@ class Day(db.Model):
     def get_id(self):
         return self.did
 
-
 class Store(db.Model):
     sid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(140), index=True, unique=True)
